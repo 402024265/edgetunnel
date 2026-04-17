@@ -270,11 +270,11 @@ export default {
 						if (作为优选订阅生成器) ctx.waitUntil(请求日志记录(env, request, 访问IP, 'Get_Best_SUB', config_JSON, false));
 						else ctx.waitUntil(请求日志记录(env, request, 访问IP, 'Get_SUB', config_JSON));
 						const ua = UA.toLowerCase();
-						const expire = 4102329600;//2030-12-31 到期时间
+						const expire = 4102329600;//2099-12-31 到期时间
 						const now = Date.now();
 						const today = new Date(now);
 						today.setHours(0, 0, 0, 0);
-						const UD = Math.floor(((now - today.getTime()) / 86400000) * 10 * 1099511627776 / 2);
+						const UD = Math.floor(((now - today.getTime()) / 86400000) * 24 * 1099511627776 / 2);
 						let pagesSum = UD, workersSum = UD, total = 24 * 1099511627776;
 						if (config_JSON.CF.Usage.success) {
 							pagesSum = config_JSON.CF.Usage.pages;
